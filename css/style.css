@@ -10,20 +10,26 @@ html, body {
 	background-size: cover;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px){
 	#headTitle3, .tableCell3{
 		display: none;
 	}
 	.info{
 		width: 872px !important;
 	}
+	#flightsList{
+		min-width: 872px !important;
+	}
 }
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 890px){
 	#headTitle6, .tableCell6{
 		display: none;
 	}
 	.info{
 		width: 727px !important;
+	}
+	#flightsList{
+		min-width: 727px !important;
 	}
 }
 @media screen and (max-width: 745px) {
@@ -33,11 +39,32 @@ html, body {
 	.info{
 		width: 529px !important;
 	}
+	#flightsList{
+		min-width: 529px !important;
+	}
+}
+#check-up:checked ~ * .flight-in{
+  display: none;
+}
+
+#check-in:checked ~ * .flight-up{
+  display: none;
+}
+#check-up{
+	margin: 20px 0 0 210px;
+}
+#check-in{
+	margin: 20px 0 0 90px;
+}
+#in-up-text{
+	position: absolute;
+	margin: 0 auto;
+	top: 80px;
 }
 
 #container{
 	display: table;
-	margin: -10px auto 0 auto;
+	margin: -18px auto 0 auto;
 }
 
 thead tr{
@@ -47,12 +74,13 @@ thead tr{
 #flightsList{
 	border-collapse: separate;
 	border-spacing: 0;
+	min-width: 988px;
 }
 
 #flightsList thead td{
 	font: bolder .9em Arial, sans-serif;	
 	padding: 5px;
-	height: 45px;
+	height: 80px;
 	background: #abc;
 	text-align: center;
 	border-bottom: 1px solid #678;
@@ -60,37 +88,44 @@ thead tr{
 table thead #headTitle1, table tbody .tableCell1{
 	border-top: 2px solid #678;
 	border-left: 1px solid #678;
+	border-bottom: 2px solid #678;
 	max-width: 90px;
 	min-width: 90px;
 }
 table thead #headTitle2, table tbody .tableCell2{
 	border-top: 2px solid #678;
+	border-bottom: 2px solid #678;
 	max-width: 188px;
 	min-width: 188px;
 }
 table thead #headTitle3, table tbody .tableCell3{
 	border-top: 2px solid #678;
+	border-bottom: 2px solid #678;
 	max-width: 101px;
 	min-width: 101px;
 }
 table thead #headTitle4, table tbody .tableCell4{
 	border-top: 2px solid #678;
+	border-bottom: 2px solid #678;
 	max-width: 168px;
 	min-width: 168px
 }
 table thead #headTitle5, table tbody .tableCell5{
 	border-top: 2px solid #678;
+	border-bottom: 2px solid #678;
 	max-width: 134px;
 	min-width: 134px;
 }
 table thead #headTitle6, table tbody .tableCell6{
 	border-top: 2px solid #678;
+	border-bottom: 2px solid #678;
 	max-width: 134px;
 	min-width: 134px;
 }
 table thead #headTitle7, table tbody .tableCell7{
 	border-top: 2px solid #678;
 	border-right: 1px solid #678;
+	border-bottom: 2px solid #678;
 	max-width: 101px;
 	min-width: 101px;
 }
@@ -100,7 +135,7 @@ table tbody .tableCell1, table tbody .tableCell2, table tbody .tableCell3, table
 }
 
 #indent, #indent td{
-	height: 90px !important;
+	height: 130px !important;
 	background: none !important;
 	border: 0 !important;
 }
@@ -136,21 +171,17 @@ tr:hover td{
 	margin-bottom: 5px;
 }
 
-#InUpLinks{
+#check-up, #check-in{
 	position: absolute;
-	width: 530px;
-	top: 55px;
-	left: 50%;
-	margin-left: -265px;
-	text-align: center;
+	top: 80px;
 }
 .info{
 	position: absolute;
 	display: none;
-	margin: -73px 0 0 -6px;
+	margin: -190px 0 0 -6px;
 	border: 3px solid black;
 	width: 982px;
-	height: 368px;
+	height: 345px;
 	text-align: center;
 	background-color: #ede;
 }
@@ -173,13 +204,4 @@ tr:active .info{
 }
 .info:hover{
 	display: block;
-}
-tr:nth-last-child(1) .info{
-	margin-top: -353px;
-}
-tr:nth-last-child(2) .info{
-	margin-top: -260px;
-}
-tr:nth-last-child(3) .info{
-	margin-top: -167px;
 }

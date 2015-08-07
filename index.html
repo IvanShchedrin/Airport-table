@@ -7,9 +7,7 @@
 </head>
 <body>
 	<div id="container">
-		<div id="InUpLinks">
-			Показать только <a href="planes_in.html">прибывающие</a> или <a href="planes_up.html">отбывающие</a>
-		</div>
+		<input type="checkbox" id="check-up"><input type="checkbox" id="check-in">
 		<table id="flightsList">
 			<thead>
 				<tr>
@@ -24,9 +22,9 @@
 			</thead>
 			<tbody>
 				<tr id="indent">
-					<td></td>
+					<td><div id="in-up-text">скрыть <b>улетающие</b> или <b>прилетающие</b> рейсы</div></td>
 				</tr>
-				<tr>
+				<tr class="flight-up">
 					<td class="tableCell1"><img src="images/plane_up.png"><br>LY 8883
 						<div class="info">
 							<div>
@@ -49,7 +47,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#0c0;">Вылетел</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>SU 26
 						<div class="info">
 							<div>
@@ -72,7 +70,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#0c0;">Приземлился</td>
 				</tr>
-				<tr>
+				<tr class="flight-up">
 					<td class="tableCell1"><img src="images/plane_up.png"><br>SU 6116
 						<div class="info">
 							<div>
@@ -95,7 +93,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#c00;">Посадка закончена</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>UT 383
 						<div class="info">
 							<div>
@@ -118,7 +116,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#fb0">Летит</td>
 				</tr>
-				<tr>
+				<tr class="flight-up">
 					<td class="tableCell1"><img src="images/plane_up.png"><br>S7 23
 						<div class="info">
 							<div>
@@ -141,7 +139,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#fb0">Ожидание посадки</td>
 				</tr>
-				<tr>
+				<tr class="flight-up">
 					<td class="tableCell1"><img src="images/plane_up.png"><br>LY 8881
 						<div class="info">
 							<div>
@@ -164,7 +162,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#fb0">Ожидание посадки</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>UN 42
 						<div class="info">
 							<div>
@@ -187,7 +185,7 @@
 					<td class="tableCell6">Совмещен с рейсом LY 9412</td>
 					<td class="tableCell7" style="color:#0c0;">По расписанию</td>
 				</tr>
-				<tr>
+				<tr class="flight-up">
 					<td class="tableCell1"><img src="images/plane_up.png"><br>SU 8
 						<div class="info">
 							<div>
@@ -210,7 +208,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#fb0">Регистрация</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>SU 6164
 						<div class="info">
 							<div>
@@ -233,7 +231,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#0c0;">По расписанию</td>
 				</tr>
-				<tr>
+				<tr class="flight-up">
 					<td class="tableCell1"><img src="images/plane_up.png"><br>S7 41
 						<div class="info">
 							<div>
@@ -256,7 +254,7 @@
 					<td class="tableCell6">Совмещен с рейсом S7 16</td>
 					<td class="tableCell7" style="color:#fb0">Регистрация</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>4G 4489
 						<div class="info">
 							<div>
@@ -279,7 +277,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#0c0;">по расписанию</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>U6 4034
 						<div class="info">
 							<div>
@@ -302,7 +300,7 @@
 					<td class="tableCell6">Задерживается на 2 часа 15 минут</td>
 					<td class="tableCell7" style="color:#c00;">Задерживается</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>U4 9423
 						<div class="info">
 							<div>
@@ -325,7 +323,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#0c0;">По расписанию</td>
 				</tr>
-				<tr>
+				<tr class="flight-up">
 					<td class="tableCell1"><img src="images/plane_up.png"><br>S7 32
 						<div class="info">
 							<div>
@@ -348,7 +346,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#0c0;">По расписанию</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>SU 4423
 						<div class="info">
 							<div>
@@ -371,7 +369,7 @@
 					<td class="tableCell6">По техническим причинам рейс отменен</td>
 					<td class="tableCell7" style="color:#c00;">Отменен</td>
 				</tr>
-				<tr>
+				<tr class="flight-up">
 					<td class="tableCell1"><img src="images/plane_up.png"><br>S7 12
 						<div class="info">
 							<div>
@@ -394,7 +392,7 @@
 					<td class="tableCell6">Задерживается на 1 час 30 минут</td>
 					<td class="tableCell7" style="color:#c00;">Задерживается</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>4G 9745
 						<div class="info">
 							<div>
@@ -417,7 +415,7 @@
 					<td class="tableCell6"></td>
 					<td class="tableCell7" style="color:#0c0;">По расписанию</td>
 				</tr>
-				<tr>
+				<tr class="flight-in">
 					<td class="tableCell1"><img src="images/plane_in.png"><br>S7 54
 						<div class="info">
 							<div>
@@ -439,6 +437,9 @@
 					<td class="tableCell5">18:20<br>19:25</td>
 					<td class="tableCell6">По техническим причинам рейс отменен</td>
 					<td class="tableCell7" style="color:#c00;">Отменен</td>
+				</tr>
+				<tr id="indent">
+					<td></td>
 				</tr>
 			</tbody>
 		</table>
