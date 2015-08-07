@@ -1,0 +1,185 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: url(../images/bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+@media screen and (max-width: 1000px) {
+	#headTitle3, .tableCell3{
+		display: none;
+	}
+	.info{
+		width: 872px !important;
+	}
+}
+@media screen and (max-width: 890px) {
+	#headTitle6, .tableCell6{
+		display: none;
+	}
+	.info{
+		width: 727px !important;
+	}
+}
+@media screen and (max-width: 745px) {
+	#headTitle2, .tableCell2{
+		display: none;
+	}
+	.info{
+		width: 529px !important;
+	}
+}
+
+#container{
+	display: table;
+	margin: -10px auto 0 auto;
+}
+
+thead tr{
+	position: fixed;
+}
+
+#flightsList{
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+#flightsList thead td{
+	font: bolder .9em Arial, sans-serif;	
+	padding: 5px;
+	height: 45px;
+	background: #abc;
+	text-align: center;
+	border-bottom: 1px solid #678;
+}
+table thead #headTitle1, table tbody .tableCell1{
+	border-top: 2px solid #678;
+	border-left: 1px solid #678;
+	max-width: 90px;
+	min-width: 90px;
+}
+table thead #headTitle2, table tbody .tableCell2{
+	border-top: 2px solid #678;
+	max-width: 188px;
+	min-width: 188px;
+}
+table thead #headTitle3, table tbody .tableCell3{
+	border-top: 2px solid #678;
+	max-width: 101px;
+	min-width: 101px;
+}
+table thead #headTitle4, table tbody .tableCell4{
+	border-top: 2px solid #678;
+	max-width: 168px;
+	min-width: 168px
+}
+table thead #headTitle5, table tbody .tableCell5{
+	border-top: 2px solid #678;
+	max-width: 134px;
+	min-width: 134px;
+}
+table thead #headTitle6, table tbody .tableCell6{
+	border-top: 2px solid #678;
+	max-width: 134px;
+	min-width: 134px;
+}
+table thead #headTitle7, table tbody .tableCell7{
+	border-top: 2px solid #678;
+	border-right: 1px solid #678;
+	max-width: 101px;
+	min-width: 101px;
+}
+
+table tbody .tableCell1, table tbody .tableCell2, table tbody .tableCell3, table tbody .tableCell4{
+	font-size: .8em !important;
+}
+
+#indent, #indent td{
+	height: 90px !important;
+	background: none !important;
+	border: 0 !important;
+}
+
+#flightsList tbody tr td{
+	font: .9em Arial, sans-serif;
+	padding: 5px;
+	border-top: 1px solid #678;
+	height: 82px;
+	overflow: hidden;
+	text-align: center;
+}
+
+tr:hover td{
+	background-color: #acb !important;
+}
+
+#flightsList tbody tr:nth-child(2n) td{
+	background-color: #def;
+}
+
+#flightsList tbody tr:nth-child(2n+1) td{
+	background-color: #ddf;
+}
+
+#flightsList tbody tr:last-child td{
+	border-bottom: 1px solid #678; 
+}
+
+.airComp img{
+	max-width: 180px;
+	max-height: 50px;
+	margin-bottom: 5px;
+}
+
+#InUpLinks{
+	position: absolute;
+	width: 530px;
+	top: 55px;
+	left: 50%;
+	margin-left: -265px;
+	text-align: center;
+}
+.info{
+	position: absolute;
+	display: none;
+	margin: -73px 0 0 -6px;
+	border: 3px solid black;
+	width: 982px;
+	height: 368px;
+	text-align: center;
+	background-color: #ede;
+}
+.info div{
+	margin-top: 10px;
+	display: inline-block;
+	max-height: 368px;
+	overflow: hidden;
+	text-align: left;
+}
+.info div{
+	font-size: 1.2em;
+	font-weight: 400;
+}
+.info div span{
+	font-weight: 600;
+}
+tr:active .info{
+	display: block;
+}
+.info:hover{
+	display: block;
+}
+tr:nth-last-child(1) .info{
+	margin-top: -353px;
+}
+tr:nth-last-child(2) .info{
+	margin-top: -260px;
+}
+tr:nth-last-child(3) .info{
+	margin-top: -167px;
+}
