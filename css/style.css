@@ -9,6 +9,12 @@ html, body {
 	-o-background-size: cover;
 	background-size: cover;
 }
+body{
+	overflow-x: hidden; 	
+}
+img{
+	border-radius: 10px;
+}
 @media screen and (max-width: 1000px){
 	#headTitle3, .tableCell3{
 		display: none;
@@ -101,8 +107,8 @@ table thead #headTitle3, table tbody .tableCell3{
 table thead #headTitle4, table tbody .tableCell4{
 	border-top: 2px solid #678;
 	border-bottom: 2px solid #678;
-	max-width: 168px;
-	min-width: 168px
+	max-width: 128px;
+	min-width: 128px
 }
 table thead #headTitle5, table tbody .tableCell5{
 	border-top: 2px solid #678;
@@ -120,8 +126,8 @@ table thead #headTitle7, table tbody .tableCell7{
 	border-top: 2px solid #678;
 	border-right: 1px solid #678;
 	border-bottom: 2px solid #678;
-	max-width: 101px;
-	min-width: 101px;
+	max-width: 141px;
+	min-width: 141px;
 }
 table tbody .tableCell1, table tbody .tableCell2, table tbody .tableCell3, table tbody .tableCell4{
 	font-size: .8em !important;
@@ -140,8 +146,23 @@ table tbody .tableCell1, table tbody .tableCell2, table tbody .tableCell3, table
 	overflow: hidden;
 	text-align: center;
 }
+tbody td a{
+	position: absolute;
+	width: 988px;
+	height: 93px;
+	margin: -58px 0 0 -75px;
+
+}
 tr:hover td{
 	background-color: #acb !important;
+}
+tr .tableCell1 span, tr .tableCell7 span{
+	display: inline-block;
+	padding: 3px 8px;
+	border: 2px solid #555;
+	font-weight: 600;
+	border-radius: 8px;
+	background-color: #ddf;
 }
 #flightsList tbody tr:nth-child(2n) td{
 	background-color: #def;
@@ -161,34 +182,101 @@ tr:hover td{
 	position: absolute;
 	top: 80px;
 }
-.info{
-	position: absolute;
-	display: none;
-	z-index: 2;
-	margin: -190px 0 0 -6px;
-	border: 3px solid black;
-	width: 982px;
-	height: 345px;
-	text-align: center;
-	background-color: #ede;
+
+/* popup windows */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    cursor: default;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    z-index: 5;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
 }
-.info div{
-	margin-top: 10px;
-	display: inline-block;
-	max-height: 368px;
-	overflow: hidden;
-	text-align: left;
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
 }
-.info div{
-	font-size: 1.2em;
-	font-weight: 400;
+.popup {
+    background-color: #fff;
+    border: 3px solid #fff;
+    display: inline-block;
+    left: 30%;
+    opacity: 0;
+    padding: 15px;
+    position: fixed;
+    text-align: justify;
+	font: 14px Helvetica, Arial, Sans-Serif;
+    top: 25%;
+    visibility: hidden;
+    z-index: 10;
+	
+    -webkit-transform: translate(-17%, -17%);
+    -moz-transform: translate(-17%, -17%);
+    -ms-transform: translate(-17%, -17%);
+    -o-transform: translate(-17%, -17%);
+    transform: translate(-17%, -17%);
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    -moz-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    -ms-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    -o-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+
+    -webkit-transition: opacity .5s, top .5s;
+    -moz-transition: opacity .5s, top .5s;
+    -ms-transition: opacity .5s, top .5s;
+    -o-transition: opacity .5s, top .5s;
+    transition: opacity .5s, top .5s;
 }
-.info div span{
+.overlay:target+.popup {
+    top: 25%;
+    opacity: 1;
+    visibility: visible;
+}
+.close {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: -15px;
+    width: 30px;
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+}
+.close:before {
+    color: rgba(255, 255, 255, 0.9);
+    content: "X";
+    font-size: 24px;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+}
+.close:hover {
+    background-color: rgba(64, 128, 128, 0.8);
+}
+.popup p, .popup div {
+    padding: 0px 5px 0px 5px;
+}
+.popup span{
 	font-weight: 600;
-}
-tr:active .info{
-	display: block;
-}
-.info:hover{
-	display: block;
 }
