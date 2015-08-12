@@ -3,10 +3,12 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background: url(../images/bg.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
+}
+*{
+	transition: all .5s ease-in-out;
+}
+html{
+	background: linear-gradient(to top, #bbe, #fff) no-repeat center center fixed;
 	background-size: cover;
 }
 body{
@@ -15,50 +17,86 @@ body{
 img{
 	border-radius: 10px;
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1005px){
+	.tableCell2 .airComp{
+		display: none;
+	}
+	#headTitle2, .tableCell2{
+		max-width: 78px !important;
+		min-width: 78px !important;
+	}
+	#flightsList{
+		min-width: 878px !important;
+	}
+}
+@media screen and (max-width: 895px){
+	#headTitle3 span, .tableCell3 span{
+		display: none;
+	}
 	#headTitle3, .tableCell3{
-		display: none;
-	}
-	.info{
-		width: 872px !important;
+		max-width: 58px !important;
+		min-width: 58px !important;
 	}
 	#flightsList{
-		min-width: 872px !important;
+		min-width: 835px !important;
 	}
 }
-@media screen and (max-width: 890px){
+@media screen and (max-width: 852px) {
+	#headTitle5 span{
+		display: none;
+	}
+	#headTitle5, .tableCell5{
+		max-width: 58px !important;
+		min-width: 58px !important;
+	}
+	#flightsList{
+		min-width: 759px !important;
+	}
+}
+@media screen and (max-width: 777px) {
 	#headTitle6, .tableCell6{
-		display: none;
-	}
-	.info{
-		width: 727px !important;
+		max-width: 98px !important;
+		min-width: 98px !important;
 	}
 	#flightsList{
-		min-width: 727px !important;
+		min-width: 723px !important;
 	}
 }
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 740px) {
 	#headTitle2, .tableCell2{
 		display: none;
 	}
-	.info{
-		width: 529px !important;
+	#flightsList{
+		min-width: 635px !important;
+	}
+}
+@media screen and (max-width: 652px) {
+	#headTitle6, .tableCell6{
+		display: none;
 	}
 	#flightsList{
-		min-width: 529px !important;
+		min-width: 527px !important;
 	}
 }
-#check-up:checked ~ * .flight-in{
-  display: none;
+@media screen and (max-width: 545px) {
+	#headTitle7, .tableCell7{
+		display: none;
+	}
+	#flightsList{
+		min-width: 375px !important;
+	}
+	table thead #headTitle5, table tbody .tableCell5{
+		border-right: 1px solid #678;
+	}
 }
-#check-in:checked ~ * .flight-up{
-  display: none;
+#check-up:not(:checked) ~ * .flight-in{
+	display: none;
 }
-#check-up{
-	margin: 20px 0 0 210px;
+#check-in:not(:checked) ~ * .flight-up{
+	display: none;
 }
-#check-in{
-	margin: 20px 0 0 90px;
+#check-up, #check-in{
+	display: none;
 }
 #in-up-text{
 	position: absolute;
@@ -81,7 +119,7 @@ thead tr{
 	font: bolder .9em Arial, sans-serif;	
 	padding: 5px;
 	height: 80px;
-	background: #abc;
+	background-color: #abc;
 	text-align: center;
 	border-bottom: 1px solid #678;
 }
@@ -151,7 +189,6 @@ tbody td a{
 	width: 988px;
 	height: 93px;
 	margin: -58px 0 0 -75px;
-
 }
 tr:hover td{
 	background-color: #acb !important;
@@ -164,11 +201,8 @@ tr .tableCell1 span, tr .tableCell7 span{
 	border-radius: 8px;
 	background-color: #ddf;
 }
-#flightsList tbody tr:nth-child(2n) td{
-	background-color: #def;
-}
-#flightsList tbody tr:nth-child(2n+1) td{
-	background-color: #ddf;
+#flightsList{
+	background: repeating-linear-gradient(180deg, #e7e9fd 140px, #e7e9fd 235px, rgb(245, 245, 253) 235px, rgb(245, 245, 253) 330px);
 }
 .airComp img{
 	max-width: 180px;
@@ -178,6 +212,23 @@ tr .tableCell1 span, tr .tableCell7 span{
 #check-up, #check-in{
 	position: absolute;
 	top: 80px;
+}
+#descript{
+	display: none;
+	position: absolute;
+	top: 120px;
+	font: .9em Arial, sans-serif;
+}
+#in-up-text{
+	position: absolute;
+	top: 90px;
+	font: .9em Arial, sans-serif;
+}
+#check-up:not(:checked) + #check-in:not(:checked) ~ #descript{
+	display: block;
+}
+label{
+	cursor: pointer;
 }
 /* popup windows */
 .overlay {
@@ -191,11 +242,6 @@ tr .tableCell1 span, tr .tableCell7 span{
     top: 0;
     visibility: hidden;
     z-index: 5;
-    -webkit-transition: opacity .5s;
-    -moz-transition: opacity .5s;
-    -ms-transition: opacity .5s;
-    -o-transition: opacity .5s;
-    transition: opacity .5s;
 }
 .overlay:target {
     visibility: visible;
@@ -221,16 +267,7 @@ tr .tableCell1 span, tr .tableCell7 span{
     -o-transform: translate(-17%, -17%);
     transform: translate(-17%, -17%);
 
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
     border-radius: 10px;
-
-    -webkit-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
-    -moz-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
-    -ms-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
-    -o-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
     box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
 
     -webkit-transition: opacity .5s, top .5s;
