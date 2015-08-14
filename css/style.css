@@ -82,7 +82,7 @@ img{
 	#flightsList{
 		min-width: 375px !important;
 	}
-	table thead #headTitle5, table tbody .tableCell5{
+	table thead #headTitle5{
 		border-right: 1px solid #678;
 	}
 }
@@ -92,21 +92,14 @@ img{
 #check-in:not(:checked) ~ * .flight-up{
 	display: none;
 }
-#check-up, #check-in{
-	display: none;
-}
-#in-up-text{
-	position: absolute;
-	margin: 0 auto;
-	top: 80px;
-}
 #container{
 	display: table;
+	position: relative;
 	margin: -18px auto 0 auto;
 }
 thead tr{
 	position: fixed;
-	z-index: 1;
+	z-index: 4;
 }
 #flightsList{
 	border-spacing: 0;
@@ -120,47 +113,37 @@ thead tr{
 	text-align: center;
 	border-bottom: 1px solid #678;
 }
-table thead #headTitle1, table tbody .tableCell1{
-	border-top: 2px solid #678;
+table thead #headTitle1{
 	border-left: 1px solid #678;
-	border-bottom: 2px solid #678;
+} 
+table thead #headTitle7{
+	border-right: 1px solid #678;
+}
+table thead #headTitle1, table tbody .tableCell1{
 	max-width: 90px;
 	min-width: 90px;
 }
 table thead #headTitle2, table tbody .tableCell2{
-	border-top: 2px solid #678;
-	border-bottom: 2px solid #678;
 	max-width: 188px;
 	min-width: 188px;
 }
 table thead #headTitle3, table tbody .tableCell3{
-	border-top: 2px solid #678;
-	border-bottom: 2px solid #678;
 	max-width: 101px;
 	min-width: 101px;
 }
 table thead #headTitle4, table tbody .tableCell4{
-	border-top: 2px solid #678;
-	border-bottom: 2px solid #678;
 	max-width: 128px;
 	min-width: 128px
 }
 table thead #headTitle5, table tbody .tableCell5{
-	border-top: 2px solid #678;
-	border-bottom: 2px solid #678;
 	max-width: 134px;
 	min-width: 134px;
 }
 table thead #headTitle6, table tbody .tableCell6{
-	border-top: 2px solid #678;
-	border-bottom: 2px solid #678;
 	max-width: 134px;
 	min-width: 134px;
 }
 table thead #headTitle7, table tbody .tableCell7{
-	border-top: 2px solid #678;
-	border-right: 1px solid #678;
-	border-bottom: 2px solid #678;
 	max-width: 141px;
 	min-width: 141px;
 }
@@ -168,28 +151,26 @@ table tbody .tableCell1, table tbody .tableCell2, table tbody .tableCell3, table
 	font-size: .8em !important;
 }
 #indent, #indent td{
-	height: 130px !important;
+	height: 80px !important;
 	background: none !important;
 	border: 0 !important;
 }
 #flightsList tbody tr td{
+	position: relative;
 	font: .9em Arial, sans-serif;
 	padding: 5px;
-	border-top: 1px solid #678;
 	max-height: 82px;
 	height: 82px;
-	overflow: hidden;
 	text-align: center;
 }
-tbody td a{
-	position: absolute;
-	width: 988px;
-	height: 93px;
-	margin: -58px 0 0 -75px;
+tbody td a:active, tbody td a:visited, tbody td a:hover, tbody td a{
+	display: block;
+	text-decoration: none;
+	color: #222;
+	min-height: 80px;
 }
-tr:hover td{
-	background-color: #acb !important;
-	transition: .2s;
+tr:hover{
+	background-color: #aaa;
 }
 tr .tableCell1 span, tr .tableCell7 span{
 	display: inline-block;
@@ -200,7 +181,9 @@ tr .tableCell1 span, tr .tableCell7 span{
 	background-color: #ddf;
 }
 #flightsList{
-	background: repeating-linear-gradient(180deg, #e7e9fd 140px, #e7e9fd 235px, rgb(245, 245, 253) 235px, rgb(245, 245, 253) 330px);
+	background: -webkit-repeating-linear-gradient(90deg, #e7e9fd 92px, #e7e9fd 184px, rgb(245, 245, 253) 184px, rgb(245, 245, 253) 276px);
+	background: repeating-linear-gradient(180deg, #e7e9fd 90px, #e7e9fd 182px, rgb(245, 245, 253) 182px, rgb(245, 245, 253) 274px);
+	overflow: hidden;
 }
 .airComp img{
 	max-width: 180px;
@@ -208,16 +191,27 @@ tr .tableCell1 span, tr .tableCell7 span{
 	margin-bottom: 5px;
 }
 #check-up, #check-in{
-	position: absolute;
-	top: 80px;
+	position: fixed;
+	top: 52px;
+	z-index: 5;
+	left: 50%
+}
+#check-up{
+	margin-left: 98px;
+}
+#check-in{
+	margin-left: -112px;
+}
+#in-up-text{
+	position: fixed;
+	top: 52px;
+	font: .9em Arial, sans-serif;
+	z-index: 5;
+	left: 50%;
+	margin-left: -93px;
 }
 #descript{
 	display: none;
-	position: absolute;
-	top: 120px;
-	font: .9em Arial, sans-serif;
-}
-#in-up-text{
 	position: absolute;
 	top: 90px;
 	font: .9em Arial, sans-serif;
@@ -289,11 +283,6 @@ label{
     text-decoration: none;
     top: -15px;
     width: 30px;
-
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     border-radius: 15px;
 }
 .close:before {
@@ -311,3 +300,15 @@ label{
 .popup span{
 	font-weight: 600;
 }
+tbody {
+	opacity: 0.99;
+}
+tbody td:hover::after {
+  content: "";
+  position: absolute;
+  background-color: #aaa;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
