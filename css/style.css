@@ -5,7 +5,7 @@ html, body {
 	padding: 0;
 }
 html{
-	background: linear-gradient(to top, #bbe, #fff) no-repeat center center fixed;
+	background: linear-gradient(to top, #ccf, #fff) no-repeat center center fixed;
 	background-size: cover;
 }
 body{
@@ -181,7 +181,6 @@ tr .tableCell1 span, tr .tableCell7 span{
 	background-color: #ddf;
 }
 #flightsList{
-	background: -webkit-repeating-linear-gradient(90deg, #e7e9fd 92px, #e7e9fd 184px, rgb(245, 245, 253) 184px, rgb(245, 245, 253) 276px);
 	background: repeating-linear-gradient(180deg, #e7e9fd 90px, #e7e9fd 182px, rgb(245, 245, 253) 182px, rgb(245, 245, 253) 274px);
 	overflow: hidden;
 }
@@ -312,3 +311,4 @@ tbody td:hover::after {
   height: 10000px;
   width: 100%;
   z-index: -1;
+}
