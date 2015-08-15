@@ -238,11 +238,11 @@ tr .tableCell1 span, tr .tableCell7 span{
 #check-up, #check-in{
 	position: fixed;
 	top: 52px;
-	z-index: 5;
+	z-index: 6;
 	left: 50%
 }
 #check-up{
-	margin-left: 98px;
+	margin-left: 100px;
 }
 #check-in{
 	margin-left: -112px;
@@ -250,12 +250,18 @@ tr .tableCell1 span, tr .tableCell7 span{
 
 /* Позиционирование ссылок на чекбоксы */
 #in-up-text{
+	padding: 5px 30px;
 	position: fixed;
-	top: 52px;
+	top: 46px;
 	font: .9em Arial, sans-serif;
 	z-index: 5;
 	left: 50%;
-	margin-left: -93px;
+	margin-left: -122px;
+	border-radius: 15px 15px 0 0;
+	background: #6a8aaa;
+}
+#in-up-text:hover{
+	background: #579;
 }
 
 /* Позиционирование текста о ненажатом чекбоксе */
