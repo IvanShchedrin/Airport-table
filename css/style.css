@@ -248,6 +248,7 @@ tr .tableCell1 span, tr .tableCell7 span{
 	margin-left: -112px;
 }
 
+
 /* Позиционирование ссылок на чекбоксы */
 #in-up-text{
 	padding: 5px 30px;
@@ -263,6 +264,8 @@ tr .tableCell1 span, tr .tableCell7 span{
 #in-up-text:hover{
 	background: #579;
 }
+/* Фикс для фф - поднял чекбокс немного выше */
+@-moz-document url-prefix(){#in-up-text{top: 44px;}}
 
 /* Позиционирование текста о ненажатом чекбоксе */
 #descript{
