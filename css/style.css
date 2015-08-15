@@ -4,16 +4,18 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
+
 html{
-	background: linear-gradient(to top, #ccf, #fff) no-repeat center center fixed;
+	background: linear-gradient(to top, #8ac, #fff) no-repeat center center fixed;
 	background-size: cover;
 }
+
 body{
 	overflow-x: hidden; 	
 }
-img{
-	border-radius: 10px;
-}
+
+
+/* скрываем столбцы и сокращаем информацию при уменьшении ширины окна */
 @media screen and (max-width: 1005px){
 	.tableCell2 .airComp{
 		display: none;
@@ -86,33 +88,55 @@ img{
 		border-right: 1px solid #678;
 	}
 }
+
+/* Скрываем строки с вылетами/прилетами при манипуляции с чекбоксом */
 #check-up:not(:checked) ~ * .flight-in{
 	display: none;
 }
 #check-in:not(:checked) ~ * .flight-up{
 	display: none;
 }
+
+/* Немного поднимаю контейнер, чтобы оставить место для чекбокса на заголовке и скрыть лишнюю часть заголовка */
 #container{
 	display: table;
 	position: relative;
 	margin: -18px auto 0 auto;
 }
+
+/* Фиксируем заголовок таблицы. z-index для отображения поверх строк таблицы */
 thead tr{
 	position: fixed;
 	z-index: 4;
 }
+
 #flightsList{
 	border-spacing: 0;
 	min-width: 988px;
 }
+
+/* Стили для заголовка таблицы */
 #flightsList thead td{
 	font: bolder .9em Arial, sans-serif;	
 	padding: 5px;
 	height: 80px;
-	background-color: #abc;
+	background-color: #8ac;
 	text-align: center;
 	border-bottom: 1px solid #678;
 }
+
+/* 	Названия столбцов:
+*
+*	headTitle1 - тип и номер рейса
+*	headTitle2 - авиакомпания и логотип
+*	headTitle3 - воздушное судно
+*	headTitle4 - аэропорт назначения
+*	headTitle5 - время вылети и прилета
+*	headTitle6 - примечания
+*	headTitle7 - статус рейса
+*
+*	Проставляем ширину столбцов при ширине экрана >1005px
+*/
 table thead #headTitle1{
 	border-left: 1px solid #678;
 } 
@@ -147,14 +171,24 @@ table thead #headTitle7, table tbody .tableCell7{
 	max-width: 141px;
 	min-width: 141px;
 }
+
+/* Шрифты у некоторых столбцов */
 table tbody .tableCell1, table tbody .tableCell2, table tbody .tableCell3, table tbody .tableCell4{
 	font-size: .8em !important;
 }
+
+/* Стиль логотипа авиакомпании */
+table tbody .tableCell2 img{
+	border-radius: 10px;
+	border: 1px solid #68a;
+}
+
+/* Indent - первая пустая строка. Нужна из-за фиксированного заголовка */
 #indent, #indent td{
 	height: 80px !important;
 	background: none !important;
-	border: 0 !important;
 }
+
 #flightsList tbody tr td{
 	position: relative;
 	font: .9em Arial, sans-serif;
@@ -163,32 +197,43 @@ table tbody .tableCell1, table tbody .tableCell2, table tbody .tableCell3, table
 	height: 82px;
 	text-align: center;
 }
+
+/* Убираем стили у ссылок. Ссылки открывают popup окно */
 tbody td a:active, tbody td a:visited, tbody td a:hover, tbody td a{
 	display: block;
 	text-decoration: none;
 	color: #222;
 	min-height: 80px;
 }
+
 tr:hover{
 	background-color: #aaa;
 }
+
+/* Стили для выделенных номера и статуса рейса */
 tr .tableCell1 span, tr .tableCell7 span{
 	display: inline-block;
 	padding: 3px 8px;
-	border: 2px solid #555;
+	border: 1px solid #68a;
 	font-weight: 600;
-	border-radius: 8px;
+	border-radius: 50px;
 	background-color: #ddf;
 }
+
+/* Заливка градиентом фона таблицы */
 #flightsList{
 	background: repeating-linear-gradient(180deg, #e7e9fd 90px, #e7e9fd 182px, rgb(245, 245, 253) 182px, rgb(245, 245, 253) 274px);
 	overflow: hidden;
 }
+
+/* Логотип авиакомпании */
 .airComp img{
 	max-width: 180px;
 	max-height: 50px;
 	margin-bottom: 5px;
 }
+
+/* Позиционирование чекбоксов рядом с ссылками на них. z-index - отображаем выше заголовка таблицы*/
 #check-up, #check-in{
 	position: fixed;
 	top: 52px;
@@ -201,6 +246,8 @@ tr .tableCell1 span, tr .tableCell7 span{
 #check-in{
 	margin-left: -112px;
 }
+
+/* Позиционирование ссылок на чекбоксы */
 #in-up-text{
 	position: fixed;
 	top: 52px;
@@ -209,19 +256,43 @@ tr .tableCell1 span, tr .tableCell7 span{
 	left: 50%;
 	margin-left: -93px;
 }
+
+/* Позиционирование текста о ненажатом чекбоксе */
 #descript{
 	display: none;
 	position: absolute;
-	top: 90px;
+	top: 95px;
 	font: .9em Arial, sans-serif;
 }
+
+/* Отображение  текста о ненажатом чекбоксе */
 #check-up:not(:checked) + #check-in:not(:checked) ~ #descript{
 	display: block;
 }
+
+/* Меняем курсор у лейбла на указатель */
 label{
 	cursor: pointer;
 }
-/* popup windows */
+
+/* Подсветка столбца */
+tbody td:hover::after {
+  content: "";
+  position: absolute;
+  background-color: #aaa;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Фикс для нормального отображения подсветки столбца */
+tbody {
+	opacity: 0.99;
+}
+
+/* Popup окна */
 .overlay {
     background-color: rgba(0, 0, 0, 0.7);
     bottom: 0;
@@ -242,7 +313,8 @@ label{
     background-color: #fff;
     border: 3px solid #fff;
     display: inline-block;
-    left: 30%;
+    left: 50%;
+    margin-left: -190px;
     opacity: 0;
     padding: 15px;
     position: fixed;
@@ -251,23 +323,8 @@ label{
     top: 25%;
     visibility: hidden;
     z-index: 10;
-	
-    -webkit-transform: translate(-17%, -17%);
-    -moz-transform: translate(-17%, -17%);
-    -ms-transform: translate(-17%, -17%);
-    -o-transform: translate(-17%, -17%);
-    transform: translate(-17%, -17%);
-
-    border-radius: 10px;
-    box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
-
-    -webkit-transition: opacity .5s, top .5s;
-    -moz-transition: opacity .5s, top .5s;
-    -ms-transition: opacity .5s, top .5s;
-    -o-transition: opacity .5s, top .5s;
-    transition: opacity .5s, top .5s;
 }
-.overlay:target+.popup {
+.overlay:target + .popup {
     top: 25%;
     opacity: 1;
     visibility: visible;
@@ -277,12 +334,11 @@ label{
     height: 30px;
     line-height: 30px;
     position: absolute;
-    right: 0;
+    right: -3px;
+    top: -3px;
     text-align: center;
     text-decoration: none;
-    top: -15px;
     width: 30px;
-    border-radius: 15px;
 }
 .close:before {
     color: rgba(255, 255, 255, 0.9);
@@ -291,24 +347,11 @@ label{
     text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
 }
 .close:hover {
-    background-color: rgba(64, 128, 128, 0.8);
+    background-color: rgba(128, 128, 128, 0.8);
 }
 .popup p, .popup div {
     padding: 0px 5px 0px 5px;
 }
 .popup span{
 	font-weight: 600;
-}
-tbody {
-	opacity: 0.99;
-}
-tbody td:hover::after {
-  content: "";
-  position: absolute;
-  background-color: #aaa;
-  left: 0;
-  top: -5000px;
-  height: 10000px;
-  width: 100%;
-  z-index: -1;
 }
