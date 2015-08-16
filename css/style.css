@@ -85,7 +85,7 @@ body{
 		min-width: 375px !important;
 	}
 	table thead #headTitle5{
-		border-right: 1px solid #678;
+		border-right: 1px solid #79b;
 	}
 }
 
@@ -118,12 +118,14 @@ thead tr{
 
 /* Стили для заголовка таблицы */
 #flightsList thead td{
-	font: bolder .9em Arial, sans-serif;	
+	font: .85em Arial, sans-serif;
+	color: #fff;
+	letter-spacing: 0.9px;
 	padding: 5px;
 	height: 80px;
-	background-color: #8ac;
+	background-color: #79b;
 	text-align: center;
-	border-bottom: 1px solid #678;
+	border-bottom: 1px solid #79b;
 }
 
 /* 	Названия столбцов:
@@ -139,10 +141,10 @@ thead tr{
 *	Проставляем ширину столбцов при ширине экрана >1005px
 */
 table thead #headTitle1{
-	border-left: 1px solid #678;
+	border-left: 1px solid #79b;
 } 
 table thead #headTitle7{
-	border-right: 1px solid #678;
+	border-right: 1px solid #79b;
 }
 table thead #headTitle1, table tbody .tableCell1{
 	max-width: 90px;
