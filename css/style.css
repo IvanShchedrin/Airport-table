@@ -315,7 +315,7 @@ tbody {
     right: 0;
     top: 0;
     visibility: hidden;
-    z-index: 5;
+    z-index: 7;
 }
 .overlay:target {
     visibility: visible;
